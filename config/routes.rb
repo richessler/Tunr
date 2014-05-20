@@ -7,8 +7,17 @@ Rails.application.routes.draw do
   resources :artists
 
   resources :users
+  resources :sessions, only: [:create]
 
-  get '/signup', to: 'users#new'
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  delete '/signout' => 'sessions#destroy'
+
+
+
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
