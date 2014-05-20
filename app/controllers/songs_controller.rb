@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-
   before_action(:load_artist, only: [:new, :create] )
   before_action(:load_song, { only: [:edit, :update, :destroy] })
 
