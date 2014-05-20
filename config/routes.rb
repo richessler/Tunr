@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :artists
 
+  resources :users
+
+  get '/signup', to: 'users#new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
