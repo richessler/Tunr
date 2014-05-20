@@ -1,5 +1,22 @@
-<h1><%= @artist.name %></h1>
+<%= link_to "Artists Home", artists_path %>
 
-<%= form_tag artist_path(@artist), method: "delete" do %>
-  <%= submit_tag("destroy") %>
+<br/>
+
+<h1><%= @artist.name %></h1>
+<%= form_for @artist, method: 'delete' do |f| %>
+  <%= f.submit "Remove Artist", id: "destroy" %>
 <% end %>
+
+<%= image_tag @artist.photo_url, width: "300px" %>
+<p>Genre: <%= @artist.genre %></p>
+<h2>Songs:</h2>
+<ul>
+  <% @songs.each do |song| %>
+    <li>
+      <%= render partial: 'songs/song', locals: { song: song } %>
+    </li>
+  <% end %>
+</ul>
+
+<br/>
+<%= link_to "Add Song", new_artist_song_path(@artist) %>

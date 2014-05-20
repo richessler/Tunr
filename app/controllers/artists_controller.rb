@@ -15,6 +15,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @songs = @artist.songs.all
   end
 
   def edit

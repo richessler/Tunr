@@ -1,0 +1,6 @@
+<%= song.title %>
+<%= song.year %>
+<%= link_to "Edit Song", edit_song_path(song) %>
+<%= form_for song, method: 'delete' do |f| %>
+  <%= f.submit "Remove Song", id: "delete-song-#{song.id}" %>
+<% end %>
