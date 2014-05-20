@@ -41,7 +41,7 @@ gem 'bcrypt'
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', '~> 2.14.0'
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
