@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe "an admin can manage artists" do
   let!(:beyonce) { Artist.create(:name => "Beyonce", :genre => "Pop", :photo_url => "http://www.tickpick.com/DesktopModules/SearchResults/img/performers/beyonce.jpg")}
@@ -19,7 +19,6 @@ describe "an admin can manage artists" do
 
   it "can update an artist" do
     visit edit_artist_path(beyonce)
-    save_and_open_page
     fill_in "artist_name", with: "Queen Bey"
     click_button("submit")
     expect(page).to have_content "Queen Bey"

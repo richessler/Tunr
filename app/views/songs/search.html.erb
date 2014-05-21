@@ -1,0 +1,8 @@
+<h2>Songs:</h2>
+<ul>
+  <% @songs.each do |song| %>
+    <li>
+      <%= render partial: 'song', locals: { song: song } %>
+    </li>
+  <% end %>
+</ul>
