@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def new
-  end
+
 
   def create
     # Find the user by email:

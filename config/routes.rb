@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :artists do
     resources :songs, except: [:index, :show], shallow: true
   end
-  
+
   get '/search' => 'songs#search'
 
-  resources :users
+  resources :users, except: [:index]
   resources :sessions, only: [:create]
 
   get '/signup' => 'users#new'
